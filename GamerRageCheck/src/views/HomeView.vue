@@ -4,6 +4,14 @@ import TheWelcome from '../components/TheWelcome.vue'
 
 <template>
   <main>
+    <div class="welcome">
     <TheWelcome />
+    </div>
   </main>
 </template>
+
+<style scoped>
+  .welcome {
+    padding: 70;
+  }
+</style>

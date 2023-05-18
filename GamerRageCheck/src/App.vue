@@ -8,7 +8,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Vue logo" class="logo" src="@/assets/Rager.svg" width="250" height="250" />
 
     <div class="wrapper">
-      <HelloWorld msg="Game Rage Checker" />
+      <HelloWorld msg="Gamer Rage Checker" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
