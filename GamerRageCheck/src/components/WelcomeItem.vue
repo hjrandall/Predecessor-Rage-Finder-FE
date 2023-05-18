@@ -16,7 +16,6 @@
 .item {
   margin-top: 2rem;
   display: flex;
-
 }
 
 .details {
@@ -43,7 +42,7 @@ h3 {
 
 @media (min-width: 1024px) {
   .item {
-    margin-top: 70;
+    margin-top: 0;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
   }
 
