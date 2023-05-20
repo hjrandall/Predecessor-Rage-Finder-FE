@@ -4,29 +4,53 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/Rager.svg" width="250" height="250" />
+  <v-app id="app">
+    <div id="main">
+      <div id="header">
+        <img alt="Vue logo" class="logo" src="@/assets/Rager.svg" width="350" height="350" />
 
-    <div class="wrapper">
-      <HelloWorld msg="Gamer Rage Checker" />
+        <div class="wrapper">
+          <HelloWorld msg="Gamer Rage Checker" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/lookUp">LookUp</RouterLink>
-        <RouterLink to="/submit">Submit a Rager</RouterLink>
-        <RouterLink to="/appeal">Appeal</RouterLink>
-        <!-- <RouterLink to="/about">About</RouterLink> -->
-      </nav>
+          <nav>
+            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/lookUp">LookUp</RouterLink>
+            <RouterLink to="/submit">Submit a Rager</RouterLink>
+            <RouterLink to="/appeal">Appeal</RouterLink>
+            <!-- <RouterLink to="/about">About</RouterLink> -->
+          </nav>
+        </div>
+      </div>
+
+      <RouterView id="router-view" />
     </div>
-  </header>
-
-  <RouterView />
+  </v-app>
 </template>
 
 <style scoped>
-header {
+#app {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  font-weight: normal;
+}
+
+#main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#header {
   line-height: 1.5;
   max-height: 100vh;
+  width: 40vw;
+  margin-left: 15%;
+}
+
+#router-view {
+  margin-left: 32px;
+  width: 60vw;
 }
 
 .logo {

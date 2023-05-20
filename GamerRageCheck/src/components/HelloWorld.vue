@@ -16,6 +16,7 @@ h1 {
   font-weight: 500;
   font-size: 2.6rem;
   top: -10px;
+  margin-top: -70px;
 }
 
 h3 {
