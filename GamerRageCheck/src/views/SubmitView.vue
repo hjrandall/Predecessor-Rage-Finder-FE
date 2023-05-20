@@ -1,33 +1,34 @@
 <template>
     <div class="submit">
-      <v-card width="600" style="box-shadow: 0 0 1000px rgb(0, 189, 126)">
-      <v-card-title style="color: rgb(0, 189, 126) ;">Submit a Rager</v-card-title>
+      <v-card id="submitRagerCard" width="600">
+      <v-card-title id="sugmitRagertitle">Submit a Rager</v-card-title>
+
     <v-container>
       <v-text-field
-        v-model="this.playerName"
-        color="primary"
+        v-model="playerName"
+        color="white"
         label="Player name"
         variant="underlined"
       ></v-text-field>
 
       <v-text-field
-        v-model="this.recordingID"
-        color="primary"
+        v-model="recordingID"
+        color="white"
         label="Recording ID"
         variant="underlined"
       ></v-text-field>
 
       <v-select
-        v-model="this.game"
-        color="primary"
+        v-model="game"
+        color="white"
         label="Game"
         :items="gameList"
         variant="underlined"
       ></v-select>
         
       <v-textarea
-        v-model="this.reasonsForReport"
-        color="primary"
+        v-model="reasonsForReport"
+        color="white"
         label="Reason for report"
         variant="underlined"
       ></v-textarea>
@@ -49,9 +50,9 @@
   <style>
   #submitButton {
       width: 100%;
-      border: 1px solid rgb(0, 189, 126);
+      border: 1px solid rgb(117, 78, 255);
       text-align: center;
-      color: rgb(0, 189, 126);
+      color: rgb(117, 78, 255);
     }
   @media (min-width: 1024px) {
     .submit {
@@ -59,10 +60,18 @@
       display: flex;
       align-items: center;
     }
+
+  #submitRagerCard {
+    box-shadow: 0 0 10000px rgb(117, 78, 255);
+  }
+
+  #sugmitRagertitle {
+    color: rgb(117, 78, 255);
+  }
   }
   </style>
 
-<script>
+<script lang=ts>
 export default {
   data: () => ({
     gameList: ['','Predecessor'],

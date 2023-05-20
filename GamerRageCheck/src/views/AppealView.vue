@@ -1,24 +1,26 @@
 <template>
   <div class="submit">
-    <v-card
-  width="600"
-  title="Appeals"
->
+    <v-card id="appealCard" width="600">
+    <v-card-title id="appealTitleCard">Appeal a name</v-card-title>
   <v-container>
     <v-text-field
-      color="primary"
+      v-model="playerName"
+      color="white"
       label="Player name"
       variant="underlined"
     ></v-text-field>
 
-      <v-text-field
-        color="primary"
-        label="Game Name"
-        variant="underlined"
-      ></v-text-field>
+    <v-select
+        v-model="game"
+        color="white"
+        label="Game"
+        :items="gameList"
+        variant="underlined">
+    </v-select>
 
     <v-textarea
-      color="primary"
+      v-model="reasonsForAppeal"
+      color="white"
       label="Reason for appeal"
       variant="underlined"
     ></v-textarea>
@@ -29,7 +31,7 @@
   <v-card-actions>
     <v-spacer></v-spacer>
 
-    <v-btn color="success">
+    <v-btn :disabled="isDisabled" @click="onsubmit" id="appealButton">
       Submit
       <v-icon icon="mdi-chevron-right" end></v-icon>
     </v-btn>
@@ -45,5 +47,49 @@
       display: flex;
       align-items: center;
     }
+
+    #appealButton {
+      width: 100%;
+      border: 1px solid rgb(255, 255, 255);
+      text-align: center;
+      color: rgb(255, 255, 255);
+    }
+
+    #appealCard {
+      box-shadow: 0 0 10000px rgb(255, 255, 255);
+      width: 600;
+    }
+
+    #appealTitleCard {
+      color: rgb(255, 255, 255);
+    }
   }
   </style>
+
+<script lang=ts>
+export default {
+  data: () => ({
+    gameList: ['','Predecessor'],
+    game: "",
+    playerName: "",
+    recordingID: "",
+    reasonsForAppeal: "",
+  }),
+  computed: {
+    isDisabled() {
+      if (this.game === "" || this.game == null || this.playerName === "" || this.reasonsForAppeal == "") {
+          return true;
+        }
+        return false;
+        }
+},
+  methods:{
+    onsubmit(){
+      console.log(this.game)
+      console.log(this.playerName)
+      console.log(this.recordingID)
+      console.log(this.reasonsForAppeal)
+    }
+    },
+}
+</script>
