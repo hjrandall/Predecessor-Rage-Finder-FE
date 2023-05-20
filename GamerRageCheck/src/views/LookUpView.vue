@@ -43,17 +43,10 @@
     align-items: center;
   }
 
-  .pNameTxtField {
-
-  }
-
   .submitBtn {
     margin-bottom: 1vw;
     left: 170px;
   }
 
-  .pTable {
-
-  }
 }
 </style>
