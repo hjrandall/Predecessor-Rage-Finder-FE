@@ -15,6 +15,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@jamescoyle/vue-icon": "^0.1.2",
     "axios": "^1.4.0",
     "pinia": "^2.0.36",
     "vue": "^3.3.2",
