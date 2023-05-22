@@ -62,9 +62,12 @@
 </style>
 
 <script lang=ts>
+import axios from 'axios'
+
 export default {
   data: () => ({
     playerName: "",
+    tableData: {}
   }),
   computed: {
     isDisabled() {
@@ -76,8 +79,19 @@ export default {
 },
   methods:{
     onsubmit(){
-      console.log(this.playerName)
+      console.log(this.tableData)
     }
     },
-}
+  mounted(){
+    axios.get('http://127.0.0.1:5000/getRagers?game=1')
+      .then((response) => {
+        this.tableData = JSON.stringify(response.data);
+        console.log(" this is the data my dude");
+        console.log(this.tableData);
+      })
+    }
+  
+      
+  }
+
 </script>
