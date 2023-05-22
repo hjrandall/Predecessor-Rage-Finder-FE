@@ -1,6 +1,6 @@
 <template>
     <div class="submit">
-      <v-card id="lookUpCard" width="700">
+      <v-card id="lookUpCardreview" width="825">
       <v-card-title id="lookUpTitle">Review Rager Reports</v-card-title>
     <v-divider></v-divider>
     <v-table style="width: 100%;">
@@ -11,6 +11,9 @@
           </th>
           <th style="width: 125px;">
             Game
+        </th>
+        <th style="width: 125px;">
+            Recording ID
         </th>
         <th style="width: 300px;">
             Reason
@@ -30,6 +33,7 @@
       <tr v-for="(object, index) in tableData" :key="index">
         <td>{{object.playerName}}</td>
         <td>{{object.game}}</td>
+        <td>{{object.recordingID}}</td>
         <td>{{object.reasons}}</td>
         <td>{{object.reports}}</td>
         <td ><v-btn @click="addRager(object.playerName, object.reports, object.game)">yes</v-btn></td>
@@ -55,7 +59,7 @@
       left: 170px;
     }
   
-    #lookUpCard {
+    #lookUpCardreview {
       box-shadow: 0 0 1000px rgb(207, 43, 51);
       width: 800px;
     }
@@ -91,6 +95,7 @@
             "reports": reports,
             "game": game
         });
+        location.reload();
     },
       async deletePotentialRager(playerName,reports,game){
        await axios.post('http://127.0.0.1:5000/deletePotentialRager', 
