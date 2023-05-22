@@ -1,7 +1,7 @@
 <template>
   <div class="submit">
     <v-card id="lookUpCard" width="600">
-    <v-card-title id="lookUpTitle">Look Up a Rager</v-card-title>
+    <v-card-title id="lookUpTitle">{Look Up a Rager}</v-card-title>
 
   <v-container>
     <v-text-field
@@ -21,17 +21,25 @@
     </v-btn>
   </v-card-actions>
   <v-divider></v-divider>
-  <v-table>
+  <v-table fixed-header height="350px">
     <thead>
       <tr>
         <th class="playerName">
           Player Name
         </th>
         <th class="playerName">
-          Number of Reports
+          # of Reports
         </th>
       </tr>
     </thead>
+    <tbody>
+      <tr v-for="(object, index) in tableData" :key="index">
+        <td>{{object.playerName}}</td>
+        <td>{{object.reports}}</td>
+
+      </tr>
+    </tbody>
+    
   </v-table>
 </v-card>
   </div>
@@ -51,7 +59,7 @@
   }
 
   #lookUpCard {
-    box-shadow: 0 0 10000px rgb(0, 189, 126);
+    box-shadow: 0 0 1000px rgb(0, 189, 126);
     width: 600;
   }
 
@@ -62,7 +70,7 @@
 }
 </style>
 
-<script lang=ts>
+<script>
 import axios from 'axios'
 
 export default { 
@@ -86,7 +94,7 @@ export default {
   mounted(){
     axios.get('http://127.0.0.1:5000/getRagers?game=1')
       .then((response) => {
-        this.tableData = JSON.stringify(response.data);
+        this.tableData = response.data;
         console.log(" this is the data my dude");
         console.log(this.tableData);
       })

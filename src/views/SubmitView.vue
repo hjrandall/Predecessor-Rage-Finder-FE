@@ -63,7 +63,7 @@
     }
 
   #submitRagerCard {
-    box-shadow: 0 0 10000px rgb(117, 78, 255);
+    box-shadow: 0 0 1000px rgb(117, 78, 255);
   }
 
   #sugmitRagertitle {
@@ -73,6 +73,7 @@
   </style>
 
 <script lang=ts>
+import axios from 'axios'
 export default {
   data: () => ({
     gameList: ['','Predecessor'],
@@ -90,12 +91,20 @@ export default {
         }
 },
   methods:{
-    onsubmit(){
-      console.log(this.game)
-      console.log(this.playerName)
-      console.log(this.recordingID)
-      console.log(this.reasonsForReport)
-    }
+    async onsubmit(){
+       await axios.post('http://127.0.0.1:5000/submitRagerReview', 
+       {
+        "playerName": this.playerName,
+        "recordingID": this.recordingID,
+        "reasons": this.reasonsForReport,
+        "reports": 1,
+        "game": 1
+      });
+      this.game = "";
+      this.playerName = "";
+      this.recordingID = "";
+      this.reasonsForReport = "";
+      }
     },
 }
 </script>

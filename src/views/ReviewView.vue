@@ -6,7 +6,7 @@
     <v-table style="width: 100%;">
       <thead>
         <tr>
-          <th style="width: 125px;">
+          <th style="width: 150px;">
             Player Name
           </th>
           <th style="width: 125px;">
@@ -26,6 +26,17 @@
           </th>
         </tr>
       </thead>
+      <tbody>
+      <tr v-for="(object, index) in tableData" :key="index">
+        <td>{{object.playerName}}</td>
+        <td>{{object.game}}</td>
+        <td>{{object.reasons}}</td>
+        <td>{{object.reports}}</td>
+        <td ><v-btn @click="addRager(object.playerName, object.reports, object.game)">yes</v-btn></td>
+        <td><v-btn @click="deletePotentialRager(object.playerName, object.reports, object.game)">no</v-btn></td>
+
+      </tr>
+    </tbody>
     </v-table>
   </v-card>
     </div>
@@ -56,7 +67,7 @@
   }
   </style>
   
-  <script lang=ts>
+  <script>
   import axios from 'axios'
   
   export default {
@@ -73,20 +84,31 @@
           }
   },
     methods:{
-      onsubmit(){
-        console.log(this.tableData)
-      }
-      },
+      async addRager(playerName,reports,game){
+       await axios.post('http://127.0.0.1:5000/addRager', 
+        {
+            "playerName": playerName,
+            "reports": reports,
+            "game": game
+        });
+    },
+      async deletePotentialRager(playerName,reports,game){
+       await axios.post('http://127.0.0.1:5000/deletePotentialRager', 
+        {
+            "playerName": playerName,
+            "reports": reports,
+            "game": game
+        });
+        location.reload();
+    },
+},
     mounted(){
-      axios.get('http://127.0.0.1:5000/getRagers?game=1')
+      axios.get('http://127.0.0.1:5000/getpotentialRagers?game=1')
         .then((response) => {
-          this.tableData = JSON.stringify(response.data);
-          console.log(" this is the data my dude");
-          console.log(this.tableData);
+          this.tableData = response.data;
         })
       }
     
         
     }
-  
-  </script>
+</script>

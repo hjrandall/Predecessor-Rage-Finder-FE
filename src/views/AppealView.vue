@@ -56,7 +56,7 @@
     }
 
     #appealCard {
-      box-shadow: 0 0 10000px rgb(255, 255, 255);
+      box-shadow: 0 0 1000px rgb(255, 255, 255);
       width: 600;
     }
 
