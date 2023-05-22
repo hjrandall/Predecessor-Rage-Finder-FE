@@ -1,7 +1,7 @@
 <template>
   <div class="submit">
     <v-card id="lookUpCard" width="600">
-    <v-card-title id="lookUpTitle">LookUp a Rager</v-card-title>
+    <v-card-title id="lookUpTitle">Look Up a Rager</v-card-title>
 
   <v-container>
     <v-text-field

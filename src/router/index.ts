@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue'
 import LookUpView from '../views/LookUpView.vue'
 import SubmitView from '../views/SubmitView.vue'
 import AppealView from '../views/AppealView.vue'
+import ReviewView  from '../views/ReviewView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,6 +36,11 @@ const router = createRouter({
       path: '/appeal',
       name: 'appeal',
       component: AppealView
+    },
+    {
+      path: '/Review-297@fw3',
+      name: 'review',
+      component: ReviewView
     }
   ]
 })

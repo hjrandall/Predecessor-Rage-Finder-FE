@@ -77,7 +77,7 @@ export default {
   }),
   computed: {
     isDisabled() {
-      if (this.game === "" || this.game == null || this.playerName === "" || this.reasonsForAppeal == "") {
+      if (this.game.trim() === "" || this.game == null || this.playerName.trim() === "" || this.reasonsForAppeal.trim() == "") {
           return true;
         }
         return false;

@@ -82,7 +82,7 @@ export default {
   }),
   computed: {
     isDisabled() {
-      if (this.game === "" || this.game == null || this.playerName === "" || this.recordingID === "" || this.reasonsForReport == "") {
+      if (this.game.trim() === "" || this.game == null || this.playerName.trim() === "" || this.recordingID.trim() === "" || this.reasonsForReport.trim() == "") {
           return true;
         }
         return false;
