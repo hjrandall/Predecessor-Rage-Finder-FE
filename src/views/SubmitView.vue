@@ -41,6 +41,7 @@
 
       <v-btn :disabled="isDisabled" @click="onsubmit" id="submitButton">
         Submit
+        <v-icon icon="mdi-chevron-right" end></v-icon>
       </v-btn>
     </v-card-actions>
   </v-card>

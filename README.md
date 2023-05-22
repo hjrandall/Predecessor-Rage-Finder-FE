@@ -1,7 +1,3 @@
-# This is just the scafolding. 
-# I'll be forming this into the actual website as I go along. 
-# I'll be going through the Vue guide, learning as I go and accomplishing the things that are needed for the project in here. 
-
 # GamerRageCheck
 # Predecessor-Rage-Finder-FE
 This is the front end for the rage finder web app we are making

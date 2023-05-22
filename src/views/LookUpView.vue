@@ -8,10 +8,11 @@
         v-model="playerName"
         color="white"
         label="Player name"
+        append-icon="mdi-magnify"
         variant="underlined"
       ></v-text-field>
   </v-container>
-
+  
   <v-card-actions>
     <v-spacer></v-spacer>
     <v-btn color="success" block variant="outlined" :disabled="isDisabled" @click="onsubmit" id="lookUpButton">
@@ -64,10 +65,10 @@
 <script lang=ts>
 import axios from 'axios'
 
-export default {
+export default { 
   data: () => ({
     playerName: "",
-    tableData: {}
+    tableData: {},
   }),
   computed: {
     isDisabled() {
@@ -76,11 +77,11 @@ export default {
         }
         return false;
         }
-},
+      },
   methods:{
     onsubmit(){
       console.log(this.tableData)
-    }
+      }
     },
   mounted(){
     axios.get('http://127.0.0.1:5000/getRagers?game=1')
@@ -89,9 +90,7 @@ export default {
         console.log(" this is the data my dude");
         console.log(this.tableData);
       })
-    }
-  
-      
+    },
   }
 
 </script>
