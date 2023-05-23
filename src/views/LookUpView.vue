@@ -57,7 +57,7 @@
     text-align: center !important;
   }
   .table-header-styling {
-    font-size: 25px;
+    font-size: 18px;
   }
 
   .header-right-border {
