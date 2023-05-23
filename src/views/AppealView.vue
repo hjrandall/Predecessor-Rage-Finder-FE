@@ -5,6 +5,7 @@
   <v-container>
     <v-text-field
       v-model="playerName"
+      maxlength="50"
       color="white"
       label="Player name"
       variant="underlined"
@@ -20,6 +21,7 @@
 
     <v-textarea
       v-model="reasonsForAppeal"
+      maxlength="100"
       color="white"
       label="Reason for appeal"
       variant="underlined"

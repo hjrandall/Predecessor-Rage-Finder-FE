@@ -6,6 +6,7 @@
   <v-container>
     <v-text-field
         v-model="playerName"
+        maxlength="50"
         color="white"
         label="Player name"
         append-icon="mdi-magnify"
