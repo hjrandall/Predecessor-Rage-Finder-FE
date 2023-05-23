@@ -5,46 +5,21 @@
 
   <v-container>
     <v-text-field
-        v-model="playerName"
+        v-model="search"
         color="white"
-        label="Player name"
+        label="Search Player"
         append-icon="mdi-magnify"
         variant="underlined"
       ></v-text-field>
   </v-container>
-  
-  <v-card-actions>
-    <v-spacer></v-spacer>
-    <v-btn color="success" block variant="outlined" :disabled="isDisabled" @click="onsubmit" id="lookUpButton">
-      Lookup
-      <v-icon icon="mdi-chevron-right" end></v-icon>
-    </v-btn>
-  </v-card-actions>
   <v-divider></v-divider>
-  <v-table fixed-header height="350px">
-    <thead>
-      <tr>
-        <th class="header-right-border table-header-styling table-text-align ">
-          Player Name
-        </th>
-        <th class="header-right-border table-header-styling table-text-align ">
-          Game
-        </th>
-        <th class=" table-header-styling table-text-align " >
-          # of Reports
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(object, index) in tableData" :key="index">
-        <td class="table-text-align ">{{object.playerName}}</td>
-        <td class="table-text-align ">{{GAMES[object.game]}}</td>
-        <td class="table-text-align ">{{object.reports}}</td>
-
-      </tr>
-    </tbody>
-    
-  </v-table>
+ <v-data-table
+       height= "350"
+       fixed-header
+      :headers="headers"
+      :items="tableData"
+      :search="search"
+    ></v-data-table>  
 </v-card>
   </div>
 </template>
@@ -82,12 +57,33 @@ tr:hover {
 
 <script>
 import axios from 'axios'
+import { VDataTable } from 'vuetify/labs/VDataTable'
 
 export default { 
+
+  components: {
+    VDataTable,
+  },
+
   data: () => ({
     GAMES:["","Predecessor"],
     playerName: "",
-    tableData: {},
+    tableData: [],
+    search: '',
+    headers: [
+      {
+        key: 'playerName',
+        title: 'Player Name',
+      },
+      {
+        key: 'game',
+        title: 'Game Name',
+      },
+      {
+        key: 'reports',
+        title: '# of Reports',
+      }, 
+    ],
   }),
   computed: {
     isDisabled() {
