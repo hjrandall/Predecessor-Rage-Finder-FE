@@ -70,10 +70,15 @@
     color: rgb(117, 78, 255);
   }
   }
+  .toast{
+    width: 25em;
+  }
   </style>
 
-<script lang=ts>
-import axios from 'axios'
+<script>
+import axios from 'axios';
+import {toast, Zoom} from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 export default {
   data: () => ({
     gameList: ['','Predecessor'],
@@ -92,7 +97,7 @@ export default {
 },
   methods:{
     async onsubmit(){
-       await axios.post('http://127.0.0.1:5000/submitRagerReview', 
+      var result= await axios.post('http://127.0.0.1:5000/submitRagerReview', 
        {
         "playerName": this.playerName.toUpperCase(),
         "recordingID": this.recordingID,
@@ -104,6 +109,7 @@ export default {
       this.playerName = "";
       this.recordingID = "";
       this.reasonsForReport = "";
+      toast.success(result.data.message,{autoClose: 4000, position: 'bottom-center', transition:Zoom, theme:'dark', toastClassName:'toast'});
       }
     },
 }

@@ -61,8 +61,10 @@
   }
   </style>
 
-<script lang=ts>
+<script>
 import axios from "axios"
+import {toast, Zoom} from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 export default {
   data: () => ({
     gameList: ['','Predecessor'],
@@ -80,7 +82,7 @@ export default {
 },
   methods:{
     async onsubmit(){
-       await axios.post('http://127.0.0.1:5000/submitAppeal', 
+       var result = await axios.post('http://127.0.0.1:5000/submitAppeal', 
        {
         "playerName": this.playerName.toUpperCase(),
         "reason": this.reasonsForAppeal,
@@ -89,6 +91,7 @@ export default {
       this.game = "";
       this.playerName = "";
       this.reasonsForAppeal = "";
+      toast.success(result.data.message,{autoClose: 4000, position: 'bottom-center', transition:Zoom, theme:'dark', toastClassName:'toast'});
       }
 }
 }
