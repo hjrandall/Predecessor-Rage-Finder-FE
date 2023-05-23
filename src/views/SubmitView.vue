@@ -12,6 +12,13 @@
         variant="underlined"
       ></v-text-field>
 
+      <v-select
+        v-model="game"
+        color="white"
+        label="Game"
+        :items="gameList"
+        variant="underlined"
+      ></v-select>
       <v-text-field
         v-model="recordingID"
         maxlength="50"
@@ -20,13 +27,6 @@
         variant="underlined"
       ></v-text-field>
 
-      <v-select
-        v-model="game"
-        color="white"
-        label="Game"
-        :items="gameList"
-        variant="underlined"
-      ></v-select>
         
       <v-textarea
         v-model="reasonsForReport"
