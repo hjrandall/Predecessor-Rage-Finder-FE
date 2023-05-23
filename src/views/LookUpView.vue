@@ -1,6 +1,6 @@
 <template>
   <div class="submit">
-    <v-card id="lookUpCard" width="600">
+    <v-card id="lookUpCard">
     <v-card-title id="lookUpTitle">Look Up a Rager</v-card-title>
 
   <v-container>
@@ -24,18 +24,22 @@
   <v-table fixed-header height="350px">
     <thead>
       <tr>
-        <th class="playerName">
+        <th class="header-right-border table-header-styling table-text-align ">
           Player Name
         </th>
-        <th class="playerName">
+        <th class="header-right-border table-header-styling table-text-align ">
+          Game
+        </th>
+        <th class=" table-header-styling table-text-align " >
           # of Reports
         </th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="(object, index) in tableData" :key="index">
-        <td>{{object.playerName}}</td>
-        <td>{{object.reports}}</td>
+        <td class="table-text-align ">{{object.playerName}}</td>
+        <td class="table-text-align ">{{GAMES[object.game]}}</td>
+        <td class="table-text-align ">{{object.reports}}</td>
 
       </tr>
     </tbody>
@@ -47,20 +51,26 @@
 
 <style>
 @media (min-width: 1024px) {
-  .lookUp {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+
+  .table-text-align {
+    text-align: center !important;
+  }
+  .table-header-styling {
+    font-size: 25px;
   }
 
-  .submitBtn {
-    margin-bottom: 1vw;
-    left: 170px;
+  .header-right-border {
+    border-right: .5px white solid;
   }
-
+  tr:nth-child(even) {
+  background-color: rgb(39, 41, 43);
+}
+tr:hover {
+  background-color: rgb(28, 38, 44);
+}
   #lookUpCard {
     box-shadow: 0 0 1000px rgb(0, 189, 126);
-    width: 600;
+    width: 600px;
   }
 
   #lookUpTitle {
@@ -75,6 +85,7 @@ import axios from 'axios'
 
 export default { 
   data: () => ({
+    GAMES:["","Predecessor"],
     playerName: "",
     tableData: {},
   }),

@@ -27,7 +27,21 @@ import HelloWorld from './components/HelloWorld.vue'
   </v-app>
 </template>
 
-<style scoped>
+<style>
+body::-webkit-scrollbar {
+    background-color: rgb(22, 21, 21);
+  }
+ ::-webkit-scrollbar {
+    width: .8em;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 30px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 189, 126);
+    border-radius: 30px;
+    margin-block: 2em;
+  }
 #app {
   margin: 0 auto;
   width: 100vw;

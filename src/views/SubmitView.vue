@@ -94,7 +94,7 @@ export default {
     async onsubmit(){
        await axios.post('http://127.0.0.1:5000/submitRagerReview', 
        {
-        "playerName": this.playerName,
+        "playerName": this.playerName.toUpperCase(),
         "recordingID": this.recordingID,
         "reasons": this.reasonsForReport,
         "reports": 1,

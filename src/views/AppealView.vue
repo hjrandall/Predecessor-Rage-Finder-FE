@@ -1,6 +1,6 @@
 <template>
   <div class="submit">
-    <v-card id="appealCard" width="600">
+    <v-card id="appealCard">
     <v-card-title id="appealTitleCard">Appeal a name</v-card-title>
   <v-container>
     <v-text-field
@@ -42,11 +42,6 @@
   
   <style>
   @media (min-width: 1024px) {
-    .appeal {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
 
     #appealButton {
       width: 100%;
@@ -57,7 +52,7 @@
 
     #appealCard {
       box-shadow: 0 0 1000px rgb(255, 255, 255);
-      width: 600;
+      width: 600px;
     }
 
     #appealTitleCard {
@@ -67,12 +62,12 @@
   </style>
 
 <script lang=ts>
+import axios from "axios"
 export default {
   data: () => ({
     gameList: ['','Predecessor'],
     game: "",
     playerName: "",
-    recordingID: "",
     reasonsForAppeal: "",
   }),
   computed: {
@@ -84,12 +79,17 @@ export default {
         }
 },
   methods:{
-    onsubmit(){
-      console.log(this.game)
-      console.log(this.playerName)
-      console.log(this.recordingID)
-      console.log(this.reasonsForAppeal)
-    }
-    },
+    async onsubmit(){
+       await axios.post('http://127.0.0.1:5000/submitAppeal', 
+       {
+        "playerName": this.playerName.toUpperCase(),
+        "reason": this.reasonsForAppeal,
+        "game": this.gameList.indexOf(this.game)
+      });
+      this.game = "";
+      this.playerName = "";
+      this.reasonsForAppeal = "";
+      }
+}
 }
 </script>

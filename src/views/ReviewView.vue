@@ -1,30 +1,30 @@
 <template>
     <div class="submit">
-      <v-card id="lookUpCardreview" width="825">
-      <v-card-title id="lookUpTitle">Review Rager Reports</v-card-title>
+      <v-card id="lookUpCardreview">
+      <v-card-title id="reviewTitle">Review Rager Reports</v-card-title>
     <v-divider></v-divider>
-    <v-table style="width: 100%;">
+    <v-table fixed-header class="vtable">
       <thead>
         <tr>
-          <th style="width: 150px;">
+          <th>
             Player Name
           </th>
-          <th style="width: 125px;">
+          <th>
             Game
         </th>
-        <th style="width: 125px;">
+        <th>
             Recording ID
         </th>
-        <th style="width: 300px;">
+        <th>
             Reason
         </th>
-        <th style="width: 50px;">
+        <th>
          Reports
         </th>
-          <th style="width: 50px;">
+          <th>
             yes
           </th>
-          <th style="width: 50px;">
+          <th>
             no
           </th>
         </tr>
@@ -32,7 +32,7 @@
       <tbody>
       <tr v-for="(object, index) in tableData" :key="index">
         <td>{{object.playerName}}</td>
-        <td>{{object.game}}</td>
+        <td>{{GAMES[object.game]}}</td>
         <td>{{object.recordingID}}</td>
         <td>{{object.reasons}}</td>
         <td>{{object.reports}}</td>
@@ -48,24 +48,14 @@
   
   <style>
   @media (min-width: 1024px) {
-    .lookUp {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-  
-    .submitBtn {
-      margin-bottom: 1vw;
-      left: 170px;
-    }
-  
+
     #lookUpCardreview {
       box-shadow: 0 0 1000px rgb(207, 43, 51);
       width: 800px;
     }
   
-    #lookUpTitle {
-      color: rgb(0, 189, 126);
+    #reviewTitle {
+      color: rgb(207, 43, 51);
     }
   
   }
@@ -76,16 +66,11 @@
   
   export default {
     data: () => ({
+      GAMES:["","Predecessor"],
       playerName: "",
       tableData: {}
     }),
     computed: {
-      isDisabled() {
-        if (this.playerName == "" || this.playerName === null) {
-            return true;
-          }
-          return false;
-          }
   },
     methods:{
       async addRager(playerName,reports,game){
