@@ -85,7 +85,7 @@ export default {
        var result = await axios.post('http://127.0.0.1:5000/submitAppeal', 
        {
         "playerName": this.playerName.toUpperCase(),
-        "reason": this.reasonsForAppeal,
+        "reasons": this.reasonsForAppeal,
         "game": this.gameList.indexOf(this.game)
       });
       this.game = "";

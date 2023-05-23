@@ -32,7 +32,7 @@ body::-webkit-scrollbar {
     background-color: rgb(22, 21, 21);
   }
  ::-webkit-scrollbar {
-    width: .8em;
+    width: .65em;
   }
   ::-webkit-scrollbar-track {
     border-radius: 30px;
