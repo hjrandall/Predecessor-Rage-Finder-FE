@@ -1,6 +1,11 @@
 <template>
   <div class="lookUp">
-    <h3>This is the place where you can check player names and see if they are ragers.</h3>
+    <div id="homediv">
+      <div>
+        <h1 class="home-text home_title">Are you tired of Ragers?</h1> 
+        <h3 class="home-text"> Now you can check player names and see if they have been reported as ragers and dodge the game before it's too late!</h3>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -10,6 +15,27 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
+  }
+  #homediv {
+    box-shadow: 0 0 1000px rgb(41, 199, 238);
+    background-color: rgb(33, 33, 33);
+    border-radius: 4px;
+    width: 650px;
+    height: 400px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+  }
+  .home-text {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding-left: 3em;
+    padding-right: 3em;
+    line-height: 2em;
+  }
+  .home_title {
+    color:rgb(41, 199, 238);
+    margin-bottom: 1em;
   }
 }
 </style>

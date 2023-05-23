@@ -6,15 +6,9 @@
     <v-container>
       <v-text-field
         v-model="playerName"
+        maxlength="50"
         color="white"
         label="Player name"
-        variant="underlined"
-      ></v-text-field>
-
-      <v-text-field
-        v-model="recordingID"
-        color="white"
-        label="Recording ID"
         variant="underlined"
       ></v-text-field>
 
@@ -25,9 +19,18 @@
         :items="gameList"
         variant="underlined"
       ></v-select>
+      <v-text-field
+        v-model="recordingID"
+        maxlength="50"
+        color="white"
+        label="Recording ID"
+        variant="underlined"
+      ></v-text-field>
+
         
       <v-textarea
         v-model="reasonsForReport"
+        maxlength="100"
         color="white"
         label="Reason for report"
         variant="underlined"
