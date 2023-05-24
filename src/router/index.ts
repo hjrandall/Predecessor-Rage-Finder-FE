@@ -38,11 +38,11 @@ const router = createRouter({
       component: AppealView
     },
     {
-      path: '/review',
+      path: '/Review-297@fw3',
       name: 'review',
       component: ReviewView,
       //meta: { showReviewPage: true },
-    },
+    }
   ]
 })
 
