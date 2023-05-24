@@ -38,11 +38,17 @@ const router = createRouter({
       component: AppealView
     },
     {
-      path: '/Review-297@fw3',
+      path: '/review',
       name: 'review',
-      component: ReviewView
-    }
+      component: ReviewView,
+      //meta: { showReviewPage: true },
+    },
   ]
 })
+
+/* router.beforeEach((to, from, next) => {
+    if (to.matched.some((record) => record.meta.showReviewPage)) next();
+    else next({ name: 'home' });
+}) */
 
 export default router

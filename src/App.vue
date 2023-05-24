@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/GamerRageChecker.vue'
+import { type DefineComponent } from 'vue';
 </script>
 
 <template>
