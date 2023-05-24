@@ -95,22 +95,21 @@
   },
     methods:{
       async viewRagers(){
-        axios.post('http://127.0.0.1:5000/getpotentialRagers',{"game": this.gameView})
+        axios.post('http://3.128.155.1/getpotentialRagers',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
         })
         this.isRagersList = true
       },
       async getAppeals(){
-        await axios.post('http://127.0.0.1:5000/getAppeals',{"game": this.gameView})
+        await axios.post('http://3.128.155.1/getAppeals',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
-          console.log(this.tableData)
         })
         this.isRagersList = false
       },
       async addRager(playerName,reports,game){
-       await axios.post('http://127.0.0.1:5000/addRager', 
+       await axios.post('http://3.128.155.1/addRager', 
         {
             "playerName": playerName,
             "reports": reports,
@@ -119,7 +118,7 @@
         this.viewRagers()
     },
     async deletePotentialRager(playerName,reports,game){
-      await axios.post('http://127.0.0.1:5000/deletePotentialRager', 
+      await axios.post('http://3.128.155.1/deletePotentialRager', 
       {
         "playerName": playerName,
         "reports": reports,
@@ -128,7 +127,7 @@
       this.viewRagers()
     },
     async deleteAppeal(playerName,reasons,game){
-      await axios.post('http://127.0.0.1:5000/deleteAppeal', 
+      await axios.post('http://3.128.155.1/deleteAppeal', 
       {
         "playerName": playerName,
         "reasons": reasons,
@@ -137,7 +136,7 @@
       this.getAppeals()
     },
     async approveAppeal(playerName,reasons,game){
-      await axios.post('http://127.0.0.1:5000/deleteRager', 
+      await axios.post('http://3.128.155.1/deleteRager', 
       {
         "playerName": playerName,
         "reasons": reasons,
@@ -148,7 +147,7 @@
     },
 },
    async mounted(){
-       await axios.post('http://127.0.0.1:5000/getpotentialRagers',{"game": this.gameView})
+       await axios.post('http://3.128.155.1/getpotentialRagers',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
           

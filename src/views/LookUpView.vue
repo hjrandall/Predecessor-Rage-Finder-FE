@@ -95,15 +95,12 @@ export default {
       },
   methods:{
     onsubmit(){
-      console.log(this.tableData)
       }
     },
   mounted(){
-    axios.post('http://127.0.0.1:5000/getRagers',{"game": this.gameView})
+    axios.post('http://3.128.155.1/getRagers',{"game": this.gameView})
       .then((response) => {
         this.tableData = response.data;
-        console.log(" this is the data my dude");
-        console.log(this.tableData);
       })
     },
   }

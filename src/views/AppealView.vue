@@ -84,7 +84,7 @@ export default {
 },
   methods:{
     async onsubmit(){
-       var result = await axios.post('http://127.0.0.1:5000/submitAppeal', 
+       var result = await axios.post('http://3.128.155.1/submitAppeal', 
        {
         "playerName": this.playerName.toUpperCase(),
         "reasons": this.reasonsForAppeal,
