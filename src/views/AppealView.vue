@@ -88,7 +88,7 @@ export default {
        {
         "playerName": this.playerName.toUpperCase(),
         "reasons": this.reasonsForAppeal,
-        "game": this.gameList.indexOf(this.game)
+        "game": this.game
       });
       this.game = "";
       this.playerName = "";

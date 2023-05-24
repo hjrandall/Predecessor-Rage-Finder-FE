@@ -106,7 +106,7 @@ export default {
         "recordingID": this.recordingID,
         "reasons": this.reasonsForReport,
         "reports": 1,
-        "game": 1
+        "game": this.game
       });
       this.game = "";
       this.playerName = "";

@@ -37,7 +37,7 @@
       <tbody>
       <tr v-for="(object, index) in tableData" :key="index">
         <td>{{object.playerName}}</td>
-        <td>{{GAMES[object.game]}}</td>
+        <td>{{object.game}}</td>
         <td v-if="isRagersList">{{object.recordingID}}</td>
         <td>{{object.reasons}}</td>
         <td v-if="isRagersList">{{object.reports}}</td>
@@ -86,7 +86,7 @@
   
   export default {
     data: () => ({
-      GAMES:["","Predecessor"],
+      gameView:"Predecessor",
       playerName: "",
       tableData: {},
       isRagersList: true
@@ -95,14 +95,14 @@
   },
     methods:{
       async viewRagers(){
-        axios.get('http://127.0.0.1:5000/getpotentialRagers?game=1')
+        axios.post('http://127.0.0.1:5000/getpotentialRagers',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
         })
         this.isRagersList = true
       },
       async getAppeals(){
-        await axios.get('http://127.0.0.1:5000/getAppeals?game=1')
+        await axios.post('http://127.0.0.1:5000/getAppeals',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
           console.log(this.tableData)
@@ -147,10 +147,11 @@
       this.getAppeals()
     },
 },
-    mounted(){
-      axios.get('http://127.0.0.1:5000/getpotentialRagers?game=1')
+   async mounted(){
+       await axios.post('http://127.0.0.1:5000/getpotentialRagers',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
+          
         })
       }
     

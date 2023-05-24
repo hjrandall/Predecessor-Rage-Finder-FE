@@ -66,7 +66,7 @@ export default {
   },
 
   data: () => ({
-    GAMES:["","Predecessor"],
+    gameView:"Predecessor",
     playerName: "",
     tableData: [],
     search: '',
@@ -99,7 +99,7 @@ export default {
       }
     },
   mounted(){
-    axios.get('http://127.0.0.1:5000/getRagers?game=1')
+    axios.post('http://127.0.0.1:5000/getRagers',{"game": this.gameView})
       .then((response) => {
         this.tableData = response.data;
         console.log(" this is the data my dude");
