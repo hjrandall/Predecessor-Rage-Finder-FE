@@ -7,7 +7,7 @@ import HelloWorld from './components/HelloWorld.vue'
   <v-app id="app">
     <div id="main">
       <div id="header">
-        <img alt="Vue logo" class="logo" src="@/assets/Rager.svg" width="350" height="350" />
+        <img class="logo" src="@/assets/Rager.svg" width="350" height="350" />
 
         <div class="wrapper">
           <HelloWorld msg="Gamer Rage Checker" />
