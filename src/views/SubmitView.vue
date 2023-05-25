@@ -43,7 +43,7 @@
       <v-spacer></v-spacer>
 
       <v-btn :disabled="isDisabled" @click="onsubmit" id="submitButton">
-        Submit
+        Submit Report
         <v-icon icon="mdi-chevron-right" end></v-icon>
       </v-btn>
     </v-card-actions>

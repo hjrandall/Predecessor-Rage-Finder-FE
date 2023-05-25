@@ -11,13 +11,13 @@ import { type DefineComponent } from 'vue';
         <img class="logo" src="@/assets/Rager.svg" width="350" height="350" />
 
         <div class="wrapper">
-          <HelloWorld msg="Gamer Rage Checker" />
+          <HelloWorld msg="Gamer Rage Check" />
 
           <nav>
             <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/lookUp">LookUp a Player</RouterLink>
+            <RouterLink to="/lookUp">Lookup a Rager</RouterLink>
             <RouterLink to="/submit">Report a Rager</RouterLink>
-            <RouterLink to="/appeal">Appeal Player Name</RouterLink>
+            <RouterLink to="/appeal">Appeal Rager Status</RouterLink>
           </nav>
         </div>
       </div>
@@ -53,6 +53,9 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
+/*   background-image: url("./assets/pull_from_the_heavens.PNG");
+  background-size: auto;
+  background-color:rgba(0, 0, 0, 0.5) */
 }
 
 #header {
@@ -107,7 +110,7 @@ nav a:first-of-type {
   }
 
   .logo {
-    margin-left: 4vw;
+    margin-left: 4.5vw;
   }
 
   header .wrapper {
@@ -127,7 +130,7 @@ nav a:first-of-type {
   }
   
   .green {
-    margin-left: 4vw;
+    margin-left: 4.5vw;
   }
 }
 </style>

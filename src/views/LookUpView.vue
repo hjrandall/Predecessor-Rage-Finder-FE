@@ -1,7 +1,7 @@
 <template>
   <div class="submit">
     <v-card id="lookUpCard">
-    <v-card-title id="lookUpTitle">Look Up a Rager</v-card-title>
+    <v-card-title id="lookUpTitle">Lookup a Rager</v-card-title>
 
   <v-container>
     <v-text-field
@@ -14,7 +14,7 @@
         class="toolTipSearch"
         activator="parent"
         location="bottom"
-      >If the player is already listed you can report them again in "Report a Rager."</v-tooltip></v-text-field>  
+      >If the player is already listed, you can report them again in 'Report a Rager'.</v-tooltip></v-text-field>
   </v-container>
   <v-divider></v-divider>
  <v-data-table
