@@ -1,14 +1,14 @@
 <template>
     <div class="submit">
       <v-card id="submitRagerCard" width="600">
-      <v-card-title id="sugmitRagertitle">Submit a Rager</v-card-title>
+      <v-card-title id="sugmitRagertitle">Report a Rager</v-card-title>
 
     <v-container>
       <v-text-field
         v-model="playerName"
         maxlength="50"
         color="white"
-        label="Player name"
+        label="Player name of the Rager"
         variant="underlined"
       ></v-text-field>
 
@@ -23,7 +23,7 @@
         v-model="recordingID"
         maxlength="50"
         color="white"
-        label="Recording ID"
+        label="Game Recording ID"
         variant="underlined"
       ></v-text-field>
 

@@ -7,10 +7,14 @@
     <v-text-field
         v-model="search"
         color="white"
-        label="Search Player"
+        label="Search for a Player"
         append-icon="mdi-magnify"
         variant="underlined"
-      ></v-text-field>
+      ><v-tooltip
+        class="toolTipSearch"
+        activator="parent"
+        location="bottom"
+      >If the player is already listed you can report them again in "Report a Rager."</v-tooltip></v-text-field>  
   </v-container>
   <v-divider></v-divider>
  <v-data-table

@@ -1,7 +1,7 @@
 <template>
   <div class="submit">
     <v-card id="appealCard">
-    <v-card-title id="appealTitleCard">Appeal a name</v-card-title>
+    <v-card-title id="appealTitleCard">Appeal player name</v-card-title>
   <v-container>
     <v-text-field
       v-model="playerName"
@@ -34,7 +34,7 @@
     <v-spacer></v-spacer>
 
     <v-btn :disabled="isDisabled" @click="onsubmit" id="appealButton">
-      Submit
+      Submit for Appeal
       <v-icon icon="mdi-chevron-right" end></v-icon>
     </v-btn>
   </v-card-actions>

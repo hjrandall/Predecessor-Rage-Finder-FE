@@ -15,9 +15,9 @@ import { type DefineComponent } from 'vue';
 
           <nav>
             <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/lookUp">LookUp</RouterLink>
-            <RouterLink to="/submit">Submit a Rager</RouterLink>
-            <RouterLink to="/appeal">Appeal</RouterLink>
+            <RouterLink to="/lookUp">LookUp a Player</RouterLink>
+            <RouterLink to="/submit">Report a Rager</RouterLink>
+            <RouterLink to="/appeal">Appeal Player Name</RouterLink>
           </nav>
         </div>
       </div>
@@ -69,7 +69,8 @@ body::-webkit-scrollbar {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin-left: 50px;
+
 }
 
 nav {
@@ -106,7 +107,7 @@ nav a:first-of-type {
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    margin-left: 4vw;
   }
 
   header .wrapper {
@@ -123,6 +124,10 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
     margin-left: .2rem
+  }
+  
+  .green {
+    margin-left: 4vw;
   }
 }
 </style>

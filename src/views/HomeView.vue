@@ -3,7 +3,7 @@
     <div id="homediv">
       <div>
         <h1 class="home-text home_title">Are you tired of Ragers?</h1> 
-        <h3 class="home-text"> Now you can check player names and see if they have been reported as ragers and dodge the game before it's too late!</h3>
+        <h3 class="home-text"> Now you have the ability to review player names and determine if they have been reported for displaying aggressive behavior, allowing you to focus on them during gameplay. It's an opportunity to promote a healthier gaming environment!</h3>
       </div>
     </div>
   </div>
