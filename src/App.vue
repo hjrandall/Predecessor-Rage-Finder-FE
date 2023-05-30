@@ -11,7 +11,7 @@ import { type DefineComponent } from 'vue';
         <img class="logo" src="@/assets/Rager.svg" width="350" height="350" />
 
         <div class="wrapper">
-          <HelloWorld msg="Gamer Rage Check" />
+          <HelloWorld msg="Gamer Rage Checker" />
 
           <nav>
             <RouterLink to="/">Home</RouterLink>
