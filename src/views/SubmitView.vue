@@ -100,7 +100,7 @@ export default {
 },
   methods:{
     async onsubmit(){
-      var result= await axios.post('https://gamerragecheck.com/API/submitRagerReview', 
+      var result= await axios.post('https://predecessorrage-1-u4279220.deta.app/submitRagerReview', 
        {
         "playerName": this.playerName.toUpperCase(),
         "recordingID": this.recordingID,

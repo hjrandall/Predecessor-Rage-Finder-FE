@@ -84,7 +84,7 @@ export default {
 },
   methods:{
     async onsubmit(){
-       var result = await axios.post('https://gamerragecheck.com/API/submitAppeal', 
+       var result = await axios.post('https://predecessorrage-1-u4279220.deta.app/submitAppeal', 
        {
         "playerName": this.playerName.toUpperCase(),
         "reasons": this.reasonsForAppeal,

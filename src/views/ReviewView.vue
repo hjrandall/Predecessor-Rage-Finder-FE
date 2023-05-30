@@ -95,21 +95,21 @@
   },
     methods:{
       async viewRagers(){
-        axios.post('https://gamerragecheck.com/API/getpotentialRagers',{"game": this.gameView})
+        axios.post('https://predecessorrage-1-u4279220.deta.app/getpotentialRagers',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
         })
         this.isRagersList = true
       },
       async getAppeals(){
-        await axios.post('https://gamerragecheck.com/API/getAppeals',{"game": this.gameView})
+        await axios.post('https://predecessorrage-1-u4279220.deta.app/getAppeals',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
         })
         this.isRagersList = false
       },
       async addRager(playerName,reports,game){
-       await axios.post('https://gamerragecheck.com/API/addRager', 
+       await axios.post('https://predecessorrage-1-u4279220.deta.app/addRager', 
         {
             "playerName": playerName,
             "reports": reports,
@@ -118,7 +118,7 @@
         this.viewRagers()
     },
     async deletePotentialRager(playerName,reports,game){
-      await axios.post('https://gamerragecheck.com/API/deletePotentialRager', 
+      await axios.post('https://predecessorrage-1-u4279220.deta.app/deletePotentialRager', 
       {
         "playerName": playerName,
         "reports": reports,
@@ -127,7 +127,7 @@
       this.viewRagers()
     },
     async deleteAppeal(playerName,reasons,game){
-      await axios.post('https://gamerragecheck.com/API/deleteAppeal', 
+      await axios.post('https://predecessorrage-1-u4279220.deta.app/deleteAppeal', 
       {
         "playerName": playerName,
         "reasons": reasons,
@@ -136,7 +136,7 @@
       this.getAppeals()
     },
     async approveAppeal(playerName,reasons,game){
-      await axios.post('https://gamerragecheck.com/API/deleteRager', 
+      await axios.post('https://predecessorrage-1-u4279220.deta.app/deleteRager', 
       {
         "playerName": playerName,
         "reasons": reasons,
@@ -147,7 +147,7 @@
     },
 },
    async mounted(){
-       await axios.post('https://gamerragecheck.com/API/getpotentialRagers',{"game": this.gameView})
+       await axios.post('https://predecessorrage-1-u4279220.deta.app/getpotentialRagers',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
           
