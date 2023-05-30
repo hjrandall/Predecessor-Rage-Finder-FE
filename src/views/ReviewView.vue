@@ -95,21 +95,21 @@
   },
     methods:{
       async viewRagers(){
-        axios.post('http://3.128.155.1/getpotentialRagers',{"game": this.gameView})
+        axios.post('https://gamerragecheck.com/API/getpotentialRagers',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
         })
         this.isRagersList = true
       },
       async getAppeals(){
-        await axios.post('http://3.128.155.1/getAppeals',{"game": this.gameView})
+        await axios.post('https://gamerragecheck.com/API/getAppeals',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
         })
         this.isRagersList = false
       },
       async addRager(playerName,reports,game){
-       await axios.post('http://3.128.155.1/addRager', 
+       await axios.post('https://gamerragecheck.com/API/addRager', 
         {
             "playerName": playerName,
             "reports": reports,
@@ -118,7 +118,7 @@
         this.viewRagers()
     },
     async deletePotentialRager(playerName,reports,game){
-      await axios.post('http://3.128.155.1/deletePotentialRager', 
+      await axios.post('https://gamerragecheck.com/API/deletePotentialRager', 
       {
         "playerName": playerName,
         "reports": reports,
@@ -127,7 +127,7 @@
       this.viewRagers()
     },
     async deleteAppeal(playerName,reasons,game){
-      await axios.post('http://3.128.155.1/deleteAppeal', 
+      await axios.post('https://gamerragecheck.com/API/deleteAppeal', 
       {
         "playerName": playerName,
         "reasons": reasons,
@@ -136,7 +136,7 @@
       this.getAppeals()
     },
     async approveAppeal(playerName,reasons,game){
-      await axios.post('http://3.128.155.1/deleteRager', 
+      await axios.post('https://gamerragecheck.com/API/deleteRager', 
       {
         "playerName": playerName,
         "reasons": reasons,
@@ -147,7 +147,7 @@
     },
 },
    async mounted(){
-       await axios.post('http://3.128.155.1/getpotentialRagers',{"game": this.gameView})
+       await axios.post('https://gamerragecheck.com/API/getpotentialRagers',{"game": this.gameView})
         .then((response) => {
           this.tableData = response.data;
           

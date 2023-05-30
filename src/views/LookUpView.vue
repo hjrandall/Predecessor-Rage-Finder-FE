@@ -102,7 +102,7 @@ export default {
       }
     },
   mounted(){
-    axios.post('http://3.128.155.1/getRagers',{"game": this.gameView})
+    axios.post('https://gamerragecheck.com/API/getRagers',{"game": this.gameView})
       .then((response) => {
         this.tableData = response.data;
       })

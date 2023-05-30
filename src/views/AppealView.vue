@@ -84,7 +84,7 @@ export default {
 },
   methods:{
     async onsubmit(){
-       var result = await axios.post('http://3.128.155.1/submitAppeal', 
+       var result = await axios.post('https://gamerragecheck.com/API/submitAppeal', 
        {
         "playerName": this.playerName.toUpperCase(),
         "reasons": this.reasonsForAppeal,
