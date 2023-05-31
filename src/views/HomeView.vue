@@ -35,4 +35,10 @@
     color:rgb(41, 199, 238);
     margin-bottom: 1em;
   }
+  @media (max-width:635px){
+  .home-text {
+    font-size: 15px;
+    padding: 0;
+  }
+}
 </style>

@@ -18,7 +18,6 @@
   </v-container>
   <v-divider></v-divider>
  <v-data-table
-       height= "350"
        fixed-header
        :headers="headers"
        :items="tableData"
@@ -30,6 +29,9 @@
 </template>
 
 <style>
+v-data-table {
+  width: 100%;
+}
   .table-text-align {
     text-align: center !important;
   }

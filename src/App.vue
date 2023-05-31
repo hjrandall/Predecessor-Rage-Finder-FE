@@ -6,6 +6,16 @@ import { type DefineComponent } from 'vue';
 
 <template>
   <v-app id="app">
+    <div class="hamburger">
+    <v-app-bar-nav-icon v-model="drawer" style="heigth:70px; width=70px" @click="changemenu"></v-app-bar-nav-icon>
+    </div>
+    <v-navigation-drawer disable-resize-watcher app v-model="drawer">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/lookUp">Lookup a Rager</RouterLink>
+      <RouterLink to="/submit">Report a Rager</RouterLink>
+      <RouterLink to="/appeal">Appeal Rager Status</RouterLink>
+    </v-navigation-drawer>
+    
     <div id="main">
       <div id="header">
         <img class="logo" src="@/assets/Rager.svg" width="350" height="350" />
@@ -28,6 +38,9 @@ import { type DefineComponent } from 'vue';
 </template>
 
 <style>
+.activenav{
+  display: false;
+}
 body::-webkit-scrollbar {
     background-color: rgb(22, 21, 21);
   }
@@ -42,7 +55,6 @@ body::-webkit-scrollbar {
     border-radius: 30px;
     margin-block: 2em;
   }
-
 #app {
   margin: 0 auto;
   width: 100%;
@@ -86,21 +98,21 @@ nav {
   padding-left: .2rem;
 }
 
-nav a.router-link-exact-active {
+a.router-link-exact-active {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
+a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
+a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid white;
 }
 
-nav a:first-of-type {
+a:first-of-type {
   border: 0;
 }
 
@@ -125,6 +137,15 @@ nav {
     margin-top: 1rem;
     margin-left: .2rem
   }
+  .v-btn {
+    display: none !important;
+  }
+  .hambuger button {
+    display: none !important;
+  }
+  v-navigation-drawer RouterLink {
+    width: 100%;
+  }
 
 @media (max-width: 1220px) {
   #main {
@@ -141,4 +162,53 @@ nav {
     margin-bottom: 30px;
   }
 }
+@media (max-width:635px){
+  .v-btn {
+    display: inline-block !important;
+  }
+  v-navigation-drawer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+  }
+  .activenav {
+    display: true;
+  }
+  a:first-of-type {
+    border-left: 1px solid rgb(0, 189, 126)
+}
+  nav {
+    display:none;
+  }
+  a{
+    border-left: 1px solid rgb(0, 189, 126);
+    width: 100%;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  h1{
+    font-size: 30px !important;
+  }
+  #router-view{
+    width: 350px;
+  }
+}
 </style>
+<script lang="ts">
+export default { 
+  data: () => ({
+    drawer:false}),
+  methods:{
+    changemenu(){
+      if (this.drawer == false){
+        this.drawer = true;
+      }
+      else{
+        this.drawer = false;
+      }
+    }
+    }
+  }
+</script>
+  
