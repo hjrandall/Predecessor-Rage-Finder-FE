@@ -163,6 +163,12 @@ nav {
   }
 }
 @media (max-width:635px){
+  #header {
+    margin-right: 7vw;
+  }
+  body{
+    overflow-x: hidden;
+}
   .v-btn {
     display: inline-block !important;
   }
