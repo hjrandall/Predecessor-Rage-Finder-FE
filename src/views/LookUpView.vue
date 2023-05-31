@@ -20,9 +20,10 @@
  <v-data-table
        height= "350"
        fixed-header
-      :headers="headers"
-      :items="tableData"
-      :search="search"
+       :headers="headers"
+       :items="tableData"
+       :search="search"
+       :loading="!tableData.length"
     ></v-data-table>  
 </v-card>
   </div>
@@ -92,12 +93,13 @@ export default {
   computed: {
     isDisabled() {
       if (this.playerName == "" || this.playerName === null) {
-          return true;
-        }
-        return false;
-        }
-      },
+        return true;
+      }
+      return false;
+    }
+  },
   methods:{
+
     onsubmit(){
       }
     },
@@ -105,6 +107,8 @@ export default {
     axios.post('https://predecessorrage-1-u4279220.deta.app/getRagers',{"game": this.gameView})
       .then((response) => {
         this.tableData = response.data;
+        this.isloading = false;
+        console.log(this.isloading)
       })
     },
   }
