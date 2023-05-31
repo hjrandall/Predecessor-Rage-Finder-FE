@@ -58,11 +58,10 @@
       text-align: center;
       color: rgb(117, 78, 255);
     }
-  @media (min-width: 1024px) {
     .submit {
-      min-height: 100vh;
       display: flex;
       align-items: center;
+      
     }
 
   #submitRagerCard {
@@ -71,7 +70,6 @@
 
   #sugmitRagertitle {
     color: rgb(117, 78, 255);
-  }
   }
   .toast{
     width: 25em;

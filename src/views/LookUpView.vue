@@ -30,8 +30,6 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
-
   .table-text-align {
     text-align: center !important;
   }
@@ -51,13 +49,13 @@ tr:hover {
   #lookUpCard {
     box-shadow: 0 0 1000px rgb(0, 189, 126);
     width: 600px;
+    margin-top: 30px;
+    margin-bottom: 50px;
   }
 
   #lookUpTitle {
     color: rgb(0, 189, 126);
   }
-
-}
 </style>
 
 <script>
