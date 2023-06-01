@@ -41,10 +41,10 @@
         <td v-if="isRagersList">{{object.recordingID}}</td>
         <td>{{object.reasons}}</td>
         <td v-if="isRagersList">{{object.reports}}</td>
-        <td v-if="isRagersList"><v-btn @click="addRager(object.playerName, object.reports, object.game)">yes</v-btn></td>
-        <td v-else><v-btn @click="approveAppeal(object.playerName, object.reasons, object.game)">yes</v-btn></td>
-        <td v-if="isRagersList"><v-btn @click="deletePotentialRager(object.playerName, object.reports, object.game)">no</v-btn></td>
-        <td v-else><v-btn @click="deleteAppeal(object.playerName, object.reasons, object.game)">no</v-btn></td>
+        <td v-if="isRagersList"><btn @click="addRager(object.playerName, object.reports, object.game)">yes</btn></td>
+        <td v-else><btn @click="approveAppeal(object.playerName, object.reasons, object.game)">yes</btn></td>
+        <td v-if="isRagersList"><btn @click="deletePotentialRager(object.playerName, object.reports, object.game)">no</btn></td>
+        <td v-else><btn @click="deleteAppeal(object.playerName, object.reasons, object.game)">no</btn></td>
 
       </tr>
     </tbody>

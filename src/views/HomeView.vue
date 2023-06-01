@@ -37,8 +37,14 @@
   }
   @media (max-width:635px){
   .home-text {
+    width: 100%;
     font-size: 15px;
-    padding: 0;
+    line-height: 1.75em;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  .home_title {
+    margin-bottom: 0;
   }
 }
 </style>

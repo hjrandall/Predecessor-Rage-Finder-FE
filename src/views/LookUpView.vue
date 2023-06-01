@@ -18,6 +18,7 @@
   </v-container>
   <v-divider></v-divider>
  <v-data-table
+       height="300px"
        fixed-header
        :headers="headers"
        :items="tableData"
@@ -51,6 +52,8 @@ tr:hover {
   #lookUpCard {
     box-shadow: 0 0 1000px rgb(0, 189, 126);
     width: 600px;
+    max-height: 600px;
+    min-height: 300px;
     margin-top: 30px;
     margin-bottom: 50px;
   }
@@ -108,7 +111,6 @@ export default {
       .then((response) => {
         this.tableData = response.data;
         this.isloading = false;
-        console.log(this.isloading)
       })
     },
   }

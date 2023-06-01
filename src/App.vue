@@ -140,9 +140,7 @@ nav {
   .v-btn {
     display: none !important;
   }
-  .hambuger button {
-    display: none !important;
-  }
+ 
   v-navigation-drawer RouterLink {
     width: 100%;
   }
@@ -171,6 +169,8 @@ nav {
 }
   .v-btn {
     display: inline-block !important;
+    position: fixed !important;
+    top:0
   }
   v-navigation-drawer {
     display: flex;
@@ -194,10 +194,11 @@ nav {
   }
 
   h1{
-    font-size: 30px !important;
+    width: 100%;
+    font-size: 25px !important;
   }
   #router-view{
-    width: 350px;
+    width: 95vw;
   }
 }
 </style>
