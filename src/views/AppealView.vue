@@ -33,10 +33,10 @@
   <v-card-actions>
     <v-spacer></v-spacer>
 
-    <btn :disabled="isDisabled" @click="onsubmit" id="appealButton">
+    <v-btn :disabled="isDisabled" @click="onsubmit" id="appealButton">
       Submit Appeal
       <v-icon icon="mdi-chevron-right" end></v-icon>
-    </btn>
+    </v-btn>
   </v-card-actions>
 </v-card>
   </div>
@@ -52,7 +52,6 @@
       height: 40px;
       margin-left: 10px;
       margin-right: 10px;
-      padding-top: 8px;
     }
 
     #appealCard {

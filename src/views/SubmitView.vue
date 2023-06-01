@@ -40,10 +40,10 @@
     <v-divider></v-divider>
 
     <v-card-actions>
-      <btn :disabled="isDisabled" @click="onsubmit" id="submitButton">
+      <v-btn :disabled="isDisabled" @click="onsubmit" id="submitButton">
         Submit Report
         <v-icon icon="mdi-chevron-right" end></v-icon>
-      </btn>
+      </v-btn>
     </v-card-actions>
   </v-card>
     </div>
@@ -63,7 +63,6 @@
       height: 40px;
       margin-left: 10px;
       margin-right: 10px;
-      padding-top: 8px;
     }
     .submit {
       display: flex;

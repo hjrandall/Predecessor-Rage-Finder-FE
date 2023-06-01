@@ -6,9 +6,7 @@ import { type DefineComponent } from 'vue';
 
 <template>
   <v-app id="app">
-    <div class="hamburger">
-    <v-app-bar-nav-icon v-model="drawer" style="heigth:70px; width=70px" @click="changemenu"></v-app-bar-nav-icon>
-    </div>
+    <img src="@/assets/square2.png" @click="changemenu" id="hamburger" alt="menu icon">
     <v-navigation-drawer disable-resize-watcher app v-model="drawer">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/lookUp">Lookup a Rager</RouterLink>
@@ -38,8 +36,17 @@ import { type DefineComponent } from 'vue';
 </template>
 
 <style>
-.activenav{
-  display: false;
+#hamburger{
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding-left: 10px;
+  padding-top: 10px;
+  position: fixed;
+  top: 0;
+}
+#hamburger:hover{
+  cursor: pointer;
 }
 body::-webkit-scrollbar {
     background-color: rgb(22, 21, 21);
@@ -67,9 +74,6 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   height: 100%;
-/*   background-image: url("./assets/pull_from_the_heavens.PNG");
-  background-size: auto;
-  background-color:rgba(0, 0, 0, 0.5) */
 }
 
 #header {
@@ -137,9 +141,6 @@ nav {
     margin-top: 1rem;
     margin-left: .2rem
   }
-  .v-btn {
-    display: none !important;
-  }
  
   v-navigation-drawer RouterLink {
     width: 100%;
@@ -161,17 +162,15 @@ nav {
   }
 }
 @media (max-width:635px){
+  #hamburger{
+    display: inline-block;
+  }
   #header {
     margin-right: 7vw;
   }
   body{
     overflow-x: hidden;
 }
-  .v-btn {
-    display: inline-block !important;
-    position: fixed !important;
-    top:0
-  }
   v-navigation-drawer {
     display: flex;
     flex-flow: column nowrap;
