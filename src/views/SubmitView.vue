@@ -61,8 +61,6 @@
       color: rgb(117, 78, 255);
       border-radius: 5px;
       height: 40px;
-      margin-left: 10px;
-      margin-right: 10px;
     }
     .submit {
       display: flex;
