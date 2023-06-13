@@ -5,6 +5,7 @@ import { type DefineComponent } from 'vue';
 </script>
 
 <template>
+  
   <v-app id="app">
     <img src="@/assets/square2.png" @click="changemenu" id="hamburger" alt="menu icon">
     <v-navigation-drawer disable-resize-watcher app v-model="drawer">
