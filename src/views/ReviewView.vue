@@ -54,8 +54,6 @@
   </template>
   
   <style>
-  @media (min-width: 1024px) {
-
     .review-btns{
       margin-bottom: 2em;
       margin-right: 3em;
@@ -70,15 +68,11 @@
       color: rgb(207, 43, 51);
     }
     .review {
-      min-height: 100vh;
       display: flex;
       flex-flow: column nowrap;;
       align-items: center;
-      padding-top: 20vh;
-      margin-left: -18em !important;
+      margin-left: 40px;
     }
-  
-  }
   </style>
   
   <script>

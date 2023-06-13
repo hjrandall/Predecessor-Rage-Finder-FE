@@ -40,8 +40,6 @@
     <v-divider></v-divider>
 
     <v-card-actions>
-      <v-spacer></v-spacer>
-
       <v-btn :disabled="isDisabled" @click="onsubmit" id="submitButton">
         Submit Report
         <v-icon icon="mdi-chevron-right" end></v-icon>
@@ -52,17 +50,23 @@
   </template>
   
   <style>
+  v-card-actions {
+    display:flex;
+    padding: 0;
+  }
   #submitButton {
       width: 100%;
       border: 1px solid rgb(117, 78, 255);
       text-align: center;
       color: rgb(117, 78, 255);
+      border-radius: 5px;
+      height: 40px;
     }
-  @media (min-width: 1024px) {
     .submit {
-      min-height: 100vh;
       display: flex;
       align-items: center;
+      margin-top: 30px;
+      
     }
 
   #submitRagerCard {
@@ -71,7 +75,6 @@
 
   #sugmitRagertitle {
     color: rgb(117, 78, 255);
-  }
   }
   .toast{
     width: 25em;

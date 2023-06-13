@@ -43,13 +43,13 @@
 </template>
   
   <style>
-  @media (min-width: 1024px) {
-
     #appealButton {
       width: 100%;
       border: 1px solid rgb(255, 255, 255);
       text-align: center;
       color: rgb(255, 255, 255);
+      border-radius: 5px;
+      height: 40px;
     }
 
     #appealCard {
@@ -60,7 +60,6 @@
     #appealTitleCard {
       color: rgb(255, 255, 255);
     }
-  }
   </style>
 
 <script>

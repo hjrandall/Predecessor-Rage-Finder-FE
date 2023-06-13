@@ -18,7 +18,7 @@
   </v-container>
   <v-divider></v-divider>
  <v-data-table
-       height= "350"
+       height="300px"
        fixed-header
        :headers="headers"
        :items="tableData"
@@ -30,8 +30,9 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
-
+v-data-table {
+  width: 100%;
+}
   .table-text-align {
     text-align: center !important;
   }
@@ -51,13 +52,15 @@ tr:hover {
   #lookUpCard {
     box-shadow: 0 0 1000px rgb(0, 189, 126);
     width: 600px;
+    max-height: 600px;
+    min-height: 300px;
+    margin-top: 30px;
+    margin-bottom: 50px;
   }
 
   #lookUpTitle {
     color: rgb(0, 189, 126);
   }
-
-}
 </style>
 
 <script>
@@ -108,7 +111,6 @@ export default {
       .then((response) => {
         this.tableData = response.data;
         this.isloading = false;
-        console.log(this.isloading)
       })
     },
   }

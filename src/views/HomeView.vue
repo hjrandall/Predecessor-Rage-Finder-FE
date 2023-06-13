@@ -10,9 +10,7 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
   .lookUp {
-    min-height: 100vh;
     display: flex;
     align-items: center;
   }
@@ -20,7 +18,7 @@
     box-shadow: 0 0 1000px rgb(41, 199, 238);
     background-color: rgb(33, 33, 33);
     border-radius: 4px;
-    width: 650px;
+    width: 600px;
     height: 400px;
     display: flex;
     flex-flow: column nowrap;
@@ -36,6 +34,17 @@
   .home_title {
     color:rgb(41, 199, 238);
     margin-bottom: 1em;
+  }
+  @media (max-width:635px){
+  .home-text {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.75em;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+  .home_title {
+    margin-bottom: 0;
   }
 }
 </style>

@@ -6,6 +6,14 @@ import { type DefineComponent } from 'vue';
 
 <template>
   <v-app id="app">
+    <img src="@/assets/square2.png" @click="changemenu" id="hamburger" alt="menu icon">
+    <v-navigation-drawer disable-resize-watcher app v-model="drawer">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/lookUp">Lookup a Rager</RouterLink>
+      <RouterLink to="/submit">Report a Rager</RouterLink>
+      <RouterLink to="/appeal">Appeal Rager Status</RouterLink>
+    </v-navigation-drawer>
+    
     <div id="main">
       <div id="header">
         <img class="logo" src="@/assets/Rager.svg" width="350" height="350" />
@@ -28,6 +36,18 @@ import { type DefineComponent } from 'vue';
 </template>
 
 <style>
+#hamburger{
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding-left: 10px;
+  padding-top: 10px;
+  position: fixed;
+  top: 0;
+}
+#hamburger:hover{
+  cursor: pointer;
+}
 body::-webkit-scrollbar {
     background-color: rgb(22, 21, 21);
   }
@@ -44,35 +64,33 @@ body::-webkit-scrollbar {
   }
 #app {
   margin: 0 auto;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   font-weight: normal;
 }
 
 #main {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-/*   background-image: url("./assets/pull_from_the_heavens.PNG");
-  background-size: auto;
-  background-color:rgba(0, 0, 0, 0.5) */
+  height: 100%;
 }
 
 #header {
   line-height: 1.5;
-  max-height: 100vh;
-  width: 40vw;
-  margin-left: 15%;
+  width: 600px;
+  margin-right: 30px;
 }
 
 #router-view {
-  margin-left: 32px;
-  width: 60vw;
+  width: 600px;
+  margin-right: 20px;
+  height: 500px;
 }
 
 .logo {
   display: block;
-  margin-left: 50px;
+  margin-left: 135px;
 
 }
 
@@ -84,42 +102,37 @@ nav {
   padding-left: .2rem;
 }
 
-nav a.router-link-exact-active {
+a.router-link-exact-active {
   color: var(--color-text);
 }
 
-nav a.router-link-exact-active:hover {
+a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
+a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid white;
 }
 
-nav a:first-of-type {
+a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
-  header {
+header {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    margin-left: 4.5vw;
-  }
-
-  header .wrapper {
+header .wrapper {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
   }
 
-  nav {
+nav {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
@@ -128,9 +141,80 @@ nav a:first-of-type {
     margin-top: 1rem;
     margin-left: .2rem
   }
-  
-  .green {
-    margin-left: 4.5vw;
+ 
+  v-navigation-drawer RouterLink {
+    width: 100%;
+  }
+
+@media (max-width: 1220px) {
+  #main {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  #header {
+    margin: 0;
+    margin-left: 20px;
+  }
+  #router-view {
+    margin: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width:635px){
+  #hamburger{
+    display: inline-block;
+  }
+  #header {
+    margin-right: 7vw;
+  }
+  body{
+    overflow-x: hidden;
+}
+  v-navigation-drawer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
+  }
+  .activenav {
+    display: true;
+  }
+  a:first-of-type {
+    border-left: 1px solid rgb(0, 189, 126)
+}
+  nav {
+    display:none;
+  }
+  a{
+    border-left: 1px solid rgb(0, 189, 126);
+    width: 100%;
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  h1{
+    width: 100%;
+    font-size: 25px !important;
+  }
+  #router-view{
+    width: 95vw;
   }
 }
 </style>
+<script lang="ts">
+export default { 
+  data: () => ({
+    drawer:false}),
+  methods:{
+    changemenu(){
+      if (this.drawer == false){
+        this.drawer = true;
+      }
+      else{
+        this.drawer = false;
+      }
+    }
+    }
+  }
+</script>
+  
